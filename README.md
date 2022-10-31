@@ -12,6 +12,7 @@ This plugin is a wrapper around [HyperPay iOS and Android SDK](https://wordpress
 ## Support Checklist
 ✔️ Credit Card payment **VISA**, **MasterCard**
 <br />✔️ Local Saudi payment with **MADA**
+<br />✔️ STC Pay
 <br />✔️ Apple Pay
 <br />✔️ Check payment status
 <br />✔️ Custom UI
@@ -159,4 +160,4 @@ For any problems, please file an issue.
 Contributions are more than welcome to fix bugs or extend this plugin!
 
 ## Maintainers
-- [Mais Alheraki](https://fairybits.com)
+- [Mohamed El Baz](https://github.com/MohamedHassan1311)

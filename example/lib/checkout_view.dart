@@ -50,9 +50,7 @@ class _CheckoutViewState extends State<CheckoutView> {
       phone: "0505652110",
       headers: {
         'Content-Type': 'application/json',
-        "Authorization":
-        'Bearer OGFjZGE0Yzk4MjYyYTAzZTAxODI3NDI0ZmRhYzVjNTd8Y1o3Y3llQVJXZQ=='
-      },
+},
       additionalParams: {
         'merchantTransactionId': '#123456',
         'merchantCustomerId': '#0845983457',
@@ -83,21 +81,27 @@ class _CheckoutViewState extends State<CheckoutView> {
       });
 
       // Make a CardInfo from the controllers
-      // CardInfo card = CardInfo(
-      //   holder: holderNameController.text,
-      //   cardNumber: cardNumberController.text.replaceAll(' ', ''),
-      //   cvv: cvvController.text,
-      //   expiryMonth: expiryController.text.split('/')[0],
-      //   expiryYear: '20' + expiryController.text.split('/')[1], STC_PAY: '',
-      // );
-      CardInfo card = CardInfo(
-        holder: "",
-        cardNumber: "",
-        cvv: "",
-        expiryMonth: "",
-        expiryYear: "", STC_PAY: 'enabled',
-      );
-
+   late   CardInfo card;
+      if(brandType != BrandType.stcPay) {
+         card = CardInfo(
+          holder: holderNameController.text,
+          cardNumber: cardNumberController.text.replaceAll(' ', ''),
+          cvv: cvvController.text,
+          expiryMonth: expiryController.text.split('/')[0],
+          expiryYear: '20' + expiryController.text.split('/')[1],
+          STC_PAY: '',
+        );
+      }
+      if(brandType == BrandType.stcPay) {
+         card = CardInfo(
+          holder: "",
+          cardNumber: "",
+          cvv: "",
+          expiryMonth: "",
+          expiryYear: "",
+          STC_PAY: 'enabled',
+        );
+      }
       try {
         // Start transaction
         if (sessionCheckoutID.isEmpty) {
