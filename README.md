@@ -23,7 +23,7 @@ This plugin is a wrapper around [HyperPay iOS and Android SDK](https://wordpress
 ### iOS Setup
 1. Add your Bundle Identifier as a URL Type.
 <br />Open ios folder using Xcode, make sure you select Runner traget, then go to **Info** tab, and there add a new URL type, then paste your Bundle Identifier and append `.payments` to it.
-<br /><img src="https://user-images.githubusercontent.com/41123719/130457061-1766b8e4-ab99-469f-81d2-58c2b99448af.png" atl="Xcode URL type" width="700"/>
+<br /><img src="https://user-images.githubusercontent.com/67841458/199091460-302a0746-6804-4d44-9435-e3fac903f373.png" atl="Xcode URL type" width="700"/>
 
 2. Open Podfile, and paste the following inside of it:
 ```ruby
